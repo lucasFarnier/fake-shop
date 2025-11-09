@@ -5,3 +5,7 @@ function changevid(buttonLink) {
     video.load();
     document.getElementById("vid").currentTime = currentTime;
 }
+
+function buyNow(){
+
+}
