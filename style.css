@@ -1,0 +1,129 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111;
+    z-index: -1;
+}
+
+.cart {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.page-header {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(to right, #fdfbfb, #ebedee);
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.page-header p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Featured Section */
+.featured {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.featured h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    width: 750px;
+    margin: auto;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card video {
+    width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-card p {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.product-colours {
+    padding-bottom: 15px;
+}
+
+.product-card button {
+    border: none;
+    padding: 7.5px;
+    display: inline-block;
+
+    border-radius: 50%;
+}
+
+.product-card button:hover {
+    border: 2px solid black;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    margin-top: 3rem;
+    color: #555;
+    font-size: 0.9rem;
+}
