@@ -1,52 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Urkiest Shop</title>
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<header>
-    <nav class="navbar">
-        <div class="logo">The Urkiest Shop</div>
-        <div class="cart">🛒</div>
-    </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The Urkiest Shop</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-    <section class="page-header">
-        <h1>Shop Smart. Shop Elegant. Shop Powerful.</h1>
-        <p>Discover the latest tech all in one place.</p>
-    </section>
-</header>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">The Urkiest Shop</div>
+                <div class="cart">🛒</div>
+            </nav>
 
-<main>
-    <section class="featured">
-        <h2>Featured Products</h2>
-        <div class="products">
-            <div class="product-card">
-                <video id="vid" width="320" height="240" autoplay loop muted>
-                    <source src="laptopWhite.mkv" type="video/mp4">
-                </video>
-                <div class="product-colours">
-                    <button class="colourBtn" style="background-color: lightgray" onclick="changevid('laptopWhite.mkv')"></button>
-                    <button class="colourBtn" style="background-color: gold" onclick="changevid('laptopGold.mkv')"></button>
-                    <button class="colourBtn" style="background-color: deeppink" onclick="changevid('laptopPink.mkv')"></button>
-                    <button class="colourBtn" style="background-color: blue" onclick="changevid('laptopBlue.mkv')"></button>
-                </div>
-                <h3>UrkInator 3000</h3>
-                <p>$1000</p>
-                <button class="buy-button" onclick="buy()">Buy now</button>
+            <section class="page-header">
+                <h1>Shop Smart. Shop Elegant. Shop Powerful.</h1>
+                <p>Discover the latest tech all in one place.</p>
+            </section>
+
+            <div id="cart-container" class="cart-sidebar hidden">
+                <h2>Your Cart</h2>
+                <ul id="cart-items"></ul>
+                <button id="close-cart">Close</button>
             </div>
-        </div>
-    </section>
-</main>
+        </header>
 
-<footer>
-    <p>© 2025 The Urkiest Shop. All rights reserved.</p>
-    <p>If you try to steal my shit im suing your ass.</p>
-</footer>
-</body>
+        <main>
+            <section class="featured">
+                <h2>Featured Products</h2>
+                <div class="products">
+                    <div class="product-card">
+                        <video id="vidLaptop" width="320" height="240" autoplay loop muted>
+                            <source src="laptopWhite.mkv" type="video/mp4">
+                        </video>
+                        <div class="product-colours">
+                            <button class="colourBtn" style="background-color: lightgray" onclick="changevid('laptopWhite.mkv')"></button>
+                            <button class="colourBtn" style="background-color: gold" onclick="changevid('laptopGold.mkv')"></button>
+                            <button class="colourBtn" style="background-color: deeppink" onclick="changevid('laptopPink.mkv')"></button>
+                            <button class="colourBtn" style="background-color: blue" onclick="changevid('laptopBlue.mkv')"></button>
+                        </div>
+                        <h3>UrkInator 3000</h3>
+                        <p>$1000</p>
+                        <button class="buy-button" onclick="buy('UrkInator 3000 Laptop', 1000)">Buy now</button>
+                    </div>
+                    <div class="product-card">
+                        <video id="vidPhone" width="320" height="240" autoplay loop muted>
+                            <source src="phoneWhite.mkv" type="video/mp4">
+                        </video>
+                        <div class="product-colours">
+                            <button class="colourBtn" style="background-color: lightgray" onclick="changevid2('phoneWhite.mkv')"></button>
+                            <button class="colourBtn" style="background-color: gold" onclick="changevid2('phoneGold.mkv')"></button>
+                            <button class="colourBtn" style="background-color: deeppink" onclick="changevid2('phonePink.mkv')"></button>
+                            <button class="colourBtn" style="background-color: blue" onclick="changevid2('phoneBlue.mkv')"></button>
+                        </div>
+                        <h3>UrkInator 3000</h3>
+                        <p>$1000</p>
+                        <button class="buy-button" onclick="buy('UrkInator 3000 Laptop', 1000)">Buy now</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div    class="trustpilot-widget"
+                    data-locale="en-GB"
+                    data-template-id="54ad5defc6454f065c28af8b"
+                    data-businessunit-id="4cfe2f3a00006400050e3b22"
+                    data-style-height="240px" data-style-width="100%"
+                    data-theme="light" data-stars="5"
+                    data-schema-type="Organization"
+                    style="position: relative;">
+            </div>
+
+            <div>
+                <p>© 2025 The Urkiest Shop. All rights reserved.</p>
+                <p>If you try to steal my shit im suing your ass.</p>
+            </div>
+        </footer>
+    </body>
 </html>
 
 <script src="coddee!!!.js"></script>
-
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
