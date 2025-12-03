@@ -11,18 +11,23 @@
         <header>
             <nav class="navbar">
                 <div class="logo">The Urkiest Shop</div>
-                <div class="cart">🛒</div>
+                <div id="cart" class="cart">🛒</div>
             </nav>
 
             <section class="page-header">
                 <h1>Shop Smart. Shop Elegant. Shop Powerful.</h1>
-                <p>Discover the latest tech all in one place.</p>
+                <p>Discover the latest tech all-in-one place.</p>
             </section>
 
             <div id="cart-container" class="cart-sidebar hidden">
                 <h2>Your Cart</h2>
                 <ul id="cart-items"></ul>
-                <button id="close-cart">Close</button>
+                <div id="cart-total-close-cart">
+                    <p id="subtotal" class="cart-items-bottom">Total: $0</p>
+                    <button id="close-cart" class="cart-items-bottom">Close</button>
+                    <button id="buy-cart" class="cart-items-bottom">Buy</button>
+                </div>
+
             </div>
         </header>
 
@@ -42,7 +47,7 @@
                         </div>
                         <h3>UrkInator 3000</h3>
                         <p>$1000</p>
-                        <button class="buy-button" onclick="buy('UrkInator 3000 Laptop', 1000)">Buy now</button>
+                        <button class="buy-button" onclick="buy('UrkInator 3000 - Laptop', 1000)">Buy now</button>
                     </div>
                     <div class="product-card">
                         <video id="vidPhone" width="320" height="240" autoplay loop muted>
@@ -54,9 +59,9 @@
                             <button class="colourBtn" style="background-color: deeppink" onclick="changevid2('phonePink.mkv')"></button>
                             <button class="colourBtn" style="background-color: blue" onclick="changevid2('phoneBlue.mkv')"></button>
                         </div>
-                        <h3>UrkInator 3000</h3>
-                        <p>$1000</p>
-                        <button class="buy-button" onclick="buy('UrkInator 3000 Laptop', 1000)">Buy now</button>
+                        <h3>uPhone 5</h3>
+                        <p>$500</p>
+                        <button class="buy-button" onclick="buy('uPhone 5 - Phone', 1000)">Buy now</button>
                     </div>
                 </div>
             </section>
