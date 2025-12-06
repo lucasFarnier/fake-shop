@@ -121,6 +121,101 @@ function removeFromCart(index) {
 
 
 
+function buyingFromCart() {
+    closeSidebar();
+
+    const cartSnapshot = [...cart];
+    const totalSnapshot = cartTotal;
+    const discountSnapshot = discount;
+
+    if (cartTotal > 0) {
+        showNotification("Your order has been placed successfully!", cartSnapshot, totalSnapshot, discountSnapshot);
+    }
+
+    cart = [];
+    cartTotal = 0;
+    discount = false;
+
+    updateCartUI();
+}
+
+
+function showNotification(message, cartSnapshot, totalSnapshot, discountSnapshot) {
+    // create notification element
+    const notif = document.createElement("div");
+    notif.textContent = message;
+    notif.classList.add("buyNotinf");
+
+    notif.innerHTML = `
+    <p>${message}</p>
+    <div class="recipte-container">
+        <button id="downReceipt" class="downReceipt">Download recipte</button>
+        <button id="noRecipte" class="noRecipte" onclick="dismissNotification()">Dismiss</button>
+    </div>
+    `
+
+    document.body.appendChild(notif);
+
+    // fade in
+    requestAnimationFrame(() => {
+        notif.style.opacity = 1;
+    });
+
+    notif.querySelector("#downReceipt").addEventListener("click", () => {downloadReceipt(cartSnapshot, totalSnapshot, discountSnapshot);});
+}
+
+
+
+function downloadReceipt(cartItems, total, discount) {
+    let receipt = "=== RECEIPT ===\n\n";
+
+    cartItems.forEach((item, i) => {
+        receipt += `Item ${i + 1}:\n`;
+        receipt += `  Name:   ${item.name}\n`;
+        receipt += `  Price:  $${item.price}\n`;
+        receipt += `  Colour: ${item.colour}\n\n`;
+    });
+
+    receipt += `--------------------------\n\n`;
+    receipt += `SUBTOTAL: $${total}\n`;
+
+    if (discount) {
+        receipt += 'DISCOUNT: 25%\n';
+        receipt += `          $${total} - $${total-(total*0.75)}\n`;
+        receipt += `TOTAL:    $${total - (total-(total*0.75))}\n\n`;
+    }
+    else
+    {
+        receipt += `TOTAL:    $${total}\n\n`;
+    }
+    receipt += `--------------------------\n\n`;
+    receipt += `Thank you for your purchase!\n`;
+
+    const blob = new Blob([receipt], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "receipt.txt";
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+
+    dismissNotification();
+}
+
+
+
+function dismissNotification() {
+
+    const notif = document.querySelector(".buyNotinf");
+    notif.style.opacity = 0;
+    setTimeout(() => notif.remove(), 300);
+}
+
+
+
 var userInput = document.getElementById("promo-code");
 
 userInput.onkeyup = function() {

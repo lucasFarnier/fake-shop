@@ -59,6 +59,15 @@ body {
     transition: width 0.3s ease, padding 0.3s ease;
 }
 
+.cart:hover {
+    background: #0056d6;
+    transform: scale(1.03);
+}
+
+.cart:active {
+    transform: scale(0.97);
+}
+
 
 
 /* Hero Section */
@@ -302,10 +311,20 @@ body {
 
 #close-cart:hover {
     background: #e73838;
+    transform: scale(1.03);
+}
+
+#close-cart:active {
+    transform: scale(0.97);
 }
 
 #buy-cart:hover{
-    background: #47ef96;
+    background: #3fdc89;
+    transform: scale(1.03);
+}
+
+#buy-cart:active {
+    transform: scale(0.97);
 }
 
 .cart-total {
@@ -343,6 +362,54 @@ body {
 .overlay.show {
     opacity: 1;
     pointer-events: auto;
+}
+
+.buyNotinf {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4bff9f;
+    color: #000;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-weight: 600;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.recipte-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.recipte-container button {
+    padding: 10px;
+
+    border: none;
+    border-radius: 15px;
+    width: 45%;
+}
+
+.downloadReceipt {
+    float: left;
+}
+
+.noReceipt {
+    float: right;
+}
+
+
+.recipte-container button:hover {
+    background: #d8d8d8;
+    transform: scale(1.03);
+}
+
+.recipte-container button:active {
+    transform: scale(0.97);
 }
 
 
