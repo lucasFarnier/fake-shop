@@ -24,13 +24,13 @@ function buy(name, price, colour) {
     cartTotal += price;
 
     //runs update func
-    updateCartUI();
+    updateCartUI(true);
 }
 
 
 
 //update sidebar cart display
-function updateCartUI() {
+function updateCartUI(adding) {
     //get all elements needed
     const list = document.getElementById("cart-items");
     const total = document.getElementById("total");
@@ -44,7 +44,7 @@ function updateCartUI() {
     cart.forEach((item, index) => {
         //create element for each item in list
         const li = document.createElement("li");
-        li.classList.add("cart-item");
+        li.classList.add("cart-item-start");
         li.innerHTML = `
         <div class="item-top-line">
             ${item.name} - $${item.price}
@@ -55,6 +55,22 @@ function updateCartUI() {
         list.appendChild(li);
 
         document.getElementById("item-colour-" + index).style.backgroundColor= item.colour;
+
+        if (index === cart.length - 1 && adding) {
+            requestAnimationFrame(() => {
+                li.classList.add("adding");
+            }, 300);
+
+            setTimeout(() => {
+                li.classList.remove("cart-item-start");
+                li.classList.remove("adding");
+                li.classList.add("cart-item");
+            });
+        }
+        else {
+            li.classList.remove("cart-item-start");
+            li.classList.add("cart-item");
+        }
     });
 
     //if not 0 then icon in nav bar shows total
