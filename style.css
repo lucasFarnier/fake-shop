@@ -139,6 +139,61 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.item-top-line {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-colour {
+    display: block;
+
+    width: 110%;
+    height: 10px;
+    background: lightgray;
+
+    margin-top: 6px;
+    margin-bottom: -12.5px;
+
+    border-radius: 10px 10px 45px 45px;
+}
+
+.cart-item.removing {
+    transform: translateX(120px);
+    opacity: 0;
+}
+
+.remove-btn {
+    width: 25px;
+    border: none;
+    border-radius: 10px;
+    float: right;
+
+    padding: 5px;
+    padding-left: 5.5px;
+    margin-left: 15px;
+
+    background: red;
+    color: #ffffff;
+
+    transition: transform 0.3s ease;
+}
+
+.remove-btn:hover {
+    transform: scale(1.2);
 }
 
 .promo-code {

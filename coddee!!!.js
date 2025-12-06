@@ -1,17 +1,14 @@
-function changevid(buttonLink) {
-    const video = document.getElementById("vidLaptop");
-    currentTime = document.getElementById("vidLaptop").currentTime;
+let selectedPhoneColour = "lightgray";
+let selectedLaptopColour = "lightgray";
+
+
+
+function changevid(buttonLink, Id) {
+    const video = document.getElementById(Id);
+    currentTime = document.getElementById(Id).currentTime;
     video.src = buttonLink;
     video.load();
-    document.getElementById("vidLaptop").currentTime = currentTime;
-}
-//please ignore i will fix promise
-function changevid2(buttonLink) {
-    const video = document.getElementById("vidPhone");
-    currentTime = document.getElementById("vidPhone").currentTime;
-    video.src = buttonLink;
-    video.load();
-    document.getElementById("vidPhone").currentTime = currentTime;
+    document.getElementById(Id).currentTime = currentTime;
 }
 
 
@@ -22,15 +19,17 @@ let cartTotal = 0;
 let discount = false;
 
 //add item to cart
-function buy(name, price) {
-    cart.push({ name, price });
+function buy(name, price, colour) {
+    cart.push({ name, price, colour});
     cartTotal += price;
 
     //runs update func
     updateCartUI();
 }
 
-// update sidebar cart display
+
+
+//update sidebar cart display
 function updateCartUI() {
     //get all elements needed
     const list = document.getElementById("cart-items");
@@ -45,8 +44,17 @@ function updateCartUI() {
     cart.forEach((item, index) => {
         //create element for each item in list
         const li = document.createElement("li");
-        li.innerHTML = `${item.name} - $${item.price} <button class="remove-btn" onclick="removeFromCart(${index})">✖</button>`;
+        li.classList.add("cart-item");
+        li.innerHTML = `
+        <div class="item-top-line">
+            ${item.name} - $${item.price}
+            <button class="remove-btn" onclick="removeFromCart(${index})">✖</button>
+        </div>
+        <div class="item-colour" id="item-colour-${index}"></div>`;
+
         list.appendChild(li);
+
+        document.getElementById("item-colour-" + index).style.backgroundColor= item.colour;
     });
 
     //if not 0 then icon in nav bar shows total
@@ -78,16 +86,27 @@ function updateCartUI() {
     total.innerHTML = message;
 }
 
+
+
 //remove item from cart
 function removeFromCart(index) {
-    cartTotal -= cart[index].price;
-    cart.splice(index, 1);
+    const list = document.getElementById("cart-items");
+    const wrap = list.children[index];
 
-    //runs update func
-    updateCartUI();
+    wrap.classList.add("removing");
+
+    setTimeout(() => {
+        cartTotal -= cart[index].price;
+        cart.splice(index, 1);
+
+        updateCartUI();
+    }, 300);
 }
 
+
+
 var userInput = document.getElementById("promo-code");
+
 userInput.onkeyup = function() {
     if ((userInput.value).trim().toLowerCase() === ("urk is great")) {
         discount = true;
@@ -97,6 +116,8 @@ userInput.onkeyup = function() {
     }
     updateCartUI();
 };
+
+
 
 //get elements for non button clickables
 const cartBtn = document.querySelector('.cart');
@@ -108,11 +129,15 @@ cartBtn.addEventListener('click', () => {
     cartSidebar.classList.remove('hidden');
 });
 
+
+
 //closes it when close button clicked
 function closeSidebar() {
     cartSidebar.classList.remove('show');
     setTimeout(() => cartSidebar.classList.add('hidden'), 300);
 }
+
+
 
 //trustpilot extension
 const trustbox = document.getElementById('trustbox');

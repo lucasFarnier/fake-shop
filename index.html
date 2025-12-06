@@ -27,7 +27,7 @@
                         <div class="promo-code">
                             <label for="promo-code"></label><input type="text" placeholder="Enter promo code" id="promo-code">
                         </div>
-                        <p  id="total" class="cart-items-bottom">
+                        <p id="total" class="cart-items-bottom">
                             Total: $0
                         </p>
                     </div>
@@ -47,28 +47,28 @@
                             <source src="laptopWhite.mkv" type="video/mp4">
                         </video>
                         <div class="product-colours">
-                            <button class="colourBtn" style="background-color: lightgray" onclick="changevid('laptopWhite.mkv')"></button>
-                            <button class="colourBtn" style="background-color: gold" onclick="changevid('laptopGold.mkv')"></button>
-                            <button class="colourBtn" style="background-color: deeppink" onclick="changevid('laptopPink.mkv')"></button>
-                            <button class="colourBtn" style="background-color: blue" onclick="changevid('laptopBlue.mkv')"></button>
+                            <button class="colourBtn" style="background-color: lightgray" onclick="changevid('laptopWhite.mkv', 'vidLaptop'); selectedLaptopColour = 'lightgray'"></button>
+                            <button class="colourBtn" style="background-color: gold" onclick="changevid('laptopGold.mkv', 'vidLaptop'); selectedLaptopColour = 'gold'"></button>
+                            <button class="colourBtn" style="background-color: deeppink" onclick="changevid('laptopPink.mkv', 'vidLaptop'); selectedLaptopColour = 'deeppink'"></button>
+                            <button class="colourBtn" style="background-color: blue" onclick="changevid('laptopBlue.mkv', 'vidLaptop'); selectedLaptopColour = 'blue'"></button>
                         </div>
                         <h3>UrkInator 3000</h3>
                         <p>$1000</p>
-                        <button class="buy-button" onclick="buy('UrkInator 3000 - Laptop', 1000)">Buy now</button>
+                        <button class="buy-button" onclick="buy('UrkInator 3000', 1000, selectedLaptopColour)">Buy now</button>
                     </div>
                     <div class="product-card">
                         <video id="vidPhone" width="320" height="240" autoplay loop muted>
                             <source src="phoneWhite.mkv" type="video/mp4">
                         </video>
                         <div class="product-colours">
-                            <button class="colourBtn" style="background-color: lightgray" onclick="changevid2('phoneWhite.mkv')"></button>
-                            <button class="colourBtn" style="background-color: gold" onclick="changevid2('phoneGold.mkv')"></button>
-                            <button class="colourBtn" style="background-color: deeppink" onclick="changevid2('phonePink.mkv')"></button>
-                            <button class="colourBtn" style="background-color: blue" onclick="changevid2('phoneBlue.mkv')"></button>
+                            <button class="colourBtn" style="background-color: lightgray" onclick="changevid('phoneWhite.mkv', 'vidPhone'); selectedPhoneColour = 'lightgray'"></button>
+                            <button class="colourBtn" style="background-color: gold" onclick="changevid('phoneGold.mkv', 'vidPhone'); selectedPhoneColour = 'gold'"></button>
+                            <button class="colourBtn" style="background-color: deeppink" onclick="changevid('phonePink.mkv', 'vidPhone'); selectedPhoneColour = 'deeppink'"></button>
+                            <button class="colourBtn" style="background-color: blue" onclick="changevid('phoneBlue.mkv', 'vidPhone'); selectedPhoneColour = 'blue'"></button>
                         </div>
                         <h3>uPhone 5</h3>
                         <p>$500</p>
-                        <button class="buy-button" onclick="buy('uPhone 5 - Phone', 500)">Buy now</button>
+                        <button class="buy-button" onclick="buy('uPhone 5', 500, selectedPhoneColour)">Buy now</button>
                     </div>
                 </div>
             </section>
