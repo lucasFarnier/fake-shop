@@ -20,6 +20,11 @@ let discount = false;
 
 //add item to cart
 function buy(name, price, colour) {
+    if (colour === "deeppink")
+    {
+        price = price * 1.10
+    }
+
     cart.push({ name, price, colour});
     cartTotal += price;
 
@@ -149,7 +154,7 @@ function showNotification(message, cartSnapshot, totalSnapshot, discountSnapshot
     notif.innerHTML = `
     <p>${message}</p>
     <div class="recipte-container">
-        <button id="downReceipt" class="downReceipt">Download recipte</button>
+        <button id="downReceipt" class="downReceipt">Download receipt</button>
         <button id="noRecipte" class="noRecipte" onclick="dismissNotification()">Dismiss</button>
     </div>
     `
