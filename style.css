@@ -127,6 +127,11 @@ body {
     transform: translateX(100%);
 }
 
+.cart-container {
+    overflow-y: auto;
+    height: 100%;
+}
+
 #cart-items {
     list-style: none;
     margin-top: 20px;
@@ -553,7 +558,6 @@ footer {
     .product-card video {
         width: 75%;
         height: auto;
-
     }
 }
 @media only screen and (max-width: 450px) {
